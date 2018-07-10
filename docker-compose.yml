@@ -1,0 +1,9 @@
+version: "2"
+services:
+  node:
+    image: limabeanteam/node:competitions
+    volumes:
+      - .:/app
+    working_dir: /app
+    # symlink to node modules has to happen after code volume is mounted
+    command: bash -c "ln -sf /node_modules /app/node_modules && cd /app && sleep infinity"

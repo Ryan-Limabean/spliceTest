@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="46px" viewBox="0 0 25 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>arrowRight</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="splice" transform="translate(-1385.000000, -487.000000)" fill="#FFFFFF">
+            <g id="headerBanner" transform="translate(0.000000, 218.000000)">
+                <g id="Group-5">
+                    <path d="M1406.90476,314.135043 C1407.22222,314.449573 1407.61905,314.606838 1408.05556,314.606838 C1408.49206,314.606838 1408.88889,314.449573 1409.20635,314.135043 C1409.84127,313.505983 1409.84127,312.483761 1409.20635,311.854701 L1388.96825,291.803419 L1409.20635,271.752137 C1409.84127,271.123077 1409.84127,270.100855 1409.20635,269.471795 C1408.57143,268.842735 1407.53968,268.842735 1406.90476,269.471795 L1385.47619,290.663248 C1384.84127,291.292308 1384.84127,292.31453 1385.47619,292.94359 L1406.90476,314.135043 L1406.90476,314.135043 Z" id="arrowRight" transform="translate(1397.341270, 291.803419) scale(-1, 1) translate(-1397.341270, -291.803419) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
