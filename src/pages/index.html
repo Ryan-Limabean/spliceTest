@@ -52,16 +52,25 @@
              <i class="fa fa-search" aria-hidden="true"></i>
         </div>
 
-        <div class="mid-item order shrink">
-              <img src="assets/img/delivery.svg" alt="">
-              <h4>free delivery</h4>
-              <p>On Orders over R500</p>
-        </div>
-        <div class="mid-item phone shrink">
-              <img src="assets/img/call.svg" alt="">
-              <h4>021 886 6179</h4>
-              <p>Mon-Fri, 8am-4pm</p>
-        </div>
+
+
+        <div class="ocontainer">  
+            <div class="mid-item order">
+                  <img src="assets/img/delivery.svg" alt="">
+                  <div class="desc">
+                    <h4>free delivery</h4>
+                    <p>On Orders over R500</p>
+                  </div>
+            </div>
+            <div class="mid-item phone">
+                  <img src="assets/img/call.svg" alt="">
+                  <div class="desc">
+                    <h4>021 886 6179</h4>
+                    <p>Mon-Fri, 8am-4pm</p>
+                  </div>
+            </div>
+        </div><!--ocontainer-->
+        
       </div> 
   </div><!--mid-->
 
@@ -96,7 +105,39 @@
 
 
 </header>
+  
+<script>
+   var p1total=0;
+   var p2total=0;
+   var subtotal = 0;
+   var p1Counter=0;
+   var p2Counter=0;
+   var cartCounter=0;
+   var p1Button = document.getElementById("p1");
+   var p2Button = document.getELementById("p2");
+  
+   
+   function addtocart(pid){
+       if(id=="p1"){
+          p1Counter++;
+          cartCounter++;
+          p1total = p1total + 36;
+          subtotoal = subtotoal + p1total;
 
+
+       }
+
+       if(id=="p2"){
+          p2Counter++;
+          cartCounter++;
+          p2total = p2total + 72;
+          subtotal = subtotoal + p2total;
+
+       }
+      
+   }
+
+</script>  
 
   <div class="product-content">
     <div class="heading"><span>shop our</span><h3>top sellers</h3></div>
@@ -109,7 +150,7 @@
               <div class="product-description">
                    <p>sweets, nuts & chocolates<br><span>Berry & Balsamic Bon Bons</span></p>
               </div>
-              <div v-on:click="addCounter" class="product-button">
+              <div id="p1" onclick="addtocart()" class="product-button">
                   <a><h2>add to cart</h2></a>
               </div>
             </div>
@@ -122,7 +163,7 @@
                 <div class="product-description">
                     <p>pasta sauces and condiments<br><span>Sundried Tomatoes, Feta & Bell Peppers</span></p>
                 </div>
-                <div class="product-button">
+                <div  id="p2" onclick="addtocart()" class="product-button">
                     <a><h2>add to cart</h2></a>
                 </div>
 
