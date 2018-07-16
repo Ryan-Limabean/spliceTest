@@ -1,6 +1,6 @@
-@mixin centerer {
+@mixin center{
   position: absolute;
-  top:35%;
+  top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -15,15 +15,18 @@
     list-style: none;
     text-align:left;
   }
+
 }
 
 
 
-    
+      
+
   .top{
     @include flex();
     @include flex-align(center);
-     height:30px;
+     height:rem-calc(30);
+     height:rem-calc(30);
      background-color:#e6e6e6;
       li{ 
         display: inline;
@@ -31,8 +34,9 @@
         text-transform: uppercase;
         font-weight:bold;
         color:$secondary-color;
-        font-size: 12px;	letter-spacing: 0.5px;
-        line-height: 15px;
+        font-size: rem-calc(12);	
+        letter-spacing: em-calc(0.5);
+        line-height: rem-calc(15)
       }
       .right{
         @include flex-align(right,middle);
@@ -45,140 +49,138 @@
         @include flex();
 
       }
+
+     
+  
+ 
     }
 
     
- 
+
 
  .mid{
-    @include xy-grid-container();
-    width:100%;
-    margin-left:150px;
-    padding-top:10px;
-    padding-bottom:10px;
-    @include breakpoint(small only){
-      margin-left:0px;
-    }
-
-    @include breakpoint(medium only){
-      margin-left:0px;
-
-    }
+  @include xy-grid-container();
+  
     
    .container{
+     padding-top:rem-calc(10);
+     padding-bottom:rem-calc(10);
      @include flex();
      @include flex-align(center,bottom);
      @include xy-grid();
-      list-style: none;
+     list-style: none;
+     @include breakpoint(medium){
+      padding-left:rem-calc(50);
+     }
+    
       .mid-item{
-        @include xy-cell(2.2);
-        @include breakpoint(small only){
-          @include xy-cell(12);
-        }
-        @include breakpoint(medium only){
-          @include xy-cell(12);
-          text-align:right;
-        }
+        @include xy-cell(12);
         
+        @include breakpoint(medium){
+          @include xy-cell(2.2);
+        }
+     
         h4{
-          color: #505050;	font-family: Montserrat;	font-size: 16px;	font-weight: 600;	letter-spacing: 0.44px;	line-height: 1px;
+          color: #505050;	
+          font-family: Montserrat;	
+          font-size: rem-calc(16);	
+          font-weight: 600;	
+          letter-spacing: rem-calc(0.44);	
+          line-height: rem-calc(1);
         }
         p{
-            font-size: 12px;	letter-spacing: 0.33px;  
+            font-size: rem-calc(12);	
+            letter-spacing: rem-calc(0.33);
+            
         }
+       
+
   }//mid-item
    
-  .order{
-    text-align:right;
-    padding-right:12px;
-    @include breakpoint(small only){
-     padding-left: 50px;
-     text-align: center;
-  
-    }
-    @include breakpoint(medium only){
+
+  .logo{
+   
+    @include breakpoint(medium down){
       text-align:center;
-      @include xy-cell(3);
-      
-    }
-    position: relative;
-    h4{
-      padding-right:15px;
-      @include breakpoint(medium only){
-        padding-right:30px;
-      }
-    }
-    img{
-      position: absolute;
-      left:10px;
-      top:-5px;
-      @include breakpoint(small only){
-        left:50px;
-      }
-    }
-  }//order
-
-    .logo{
-      @include breakpoint(small only){
-        text-align:center;
-        padding-bottom: 10px;
-      }
-
-      @include breakpoint(medium only){
-        text-align:center;
-        padding-bottom: 10px;
-    }
-    }
-
-  .phone{
-    text-align:right;
-    padding-right:40px;
-    position: relative;
-    @include breakpoint(small only){
-      padding-left: 65px;
-      text-align: center;
-    }
-    @include breakpoint(medium only){
-      text-align:center;
-      @include xy-cell(3);
-    }
-    h4{
-      padding-right:5px;
-    }
-    img{
-      position: absolute;
-      left:10px;
-      top:-5px;
-      @include breakpoint(small only){
-        left:60px;
-      
-    }
+      padding-bottom: rem-calc(10);
+   }
   }
-}
+
+  
+  .ocontainer{
+    @include flex();
+    @include flex-align(center,bottom);
+     @include xy-grid();
+     padding-left:rem-calc(30);
+    
+     
+     .desc{
+      display: inline-block;
+    }
+
+    .phone{
+      
+      @include xy-cell(12);
+      img{
+        margin-bottom:rem-calc(20);
+      }
+
+      @include breakpoint(medium){
+        @include xy-cell(6);
+
+      }
+     }
+
+
+    .order{
+      position: relative;
+      @include xy-cell(12);
+      margin-bottom:-rem-calc(-10);
+      .desc{
+         padding-left:rem-calc(50);
+         @include breakpoint(small only){
+              h4{
+                line-height: em-calc(15);	
+              }
+
+        }
+      }
+      img{
+        position: absolute;
+      }
+      @include breakpoint(medium){
+        @include xy-cell(6);
+
+      }
+      
+  }
+} 
 
 
   .search{ 
-    width:340px;
+    width:rem-calc(340);
     position: relative;
   
     .prod-s{
-      border-radius: 50px;
-      font-size:13px;
+      border-radius: rem-calc(50);
+      font-size:rem-calc(13);
       font-family: Montserrat;
       color:#ABABAB;
-      padding-top:22px;
-      padding-bottom:22px;
-     padding-left:15px;
-     }
-     i{
+      padding-top:rem-calc(22);
+      padding-bottom:rem-calc(22);
+      padding-left:rem-calc(15);
+    }
+    i{
       position: absolute;
       right:5%;
       top:20%;
-      font-size:23px;
+      font-size:rem-calc(23);
       color:#ABABAB;
       -webkit-text-stroke: 1px white;
-     }
-   }//search-bar
+    }
+  }//search-bar
+
+
 
  }//container
 }//mid
@@ -190,29 +192,37 @@
   background-color: #003578;
   .container{
       @include xy-grid-container();
-      padding: 2px;
+      padding: rem-calc(2);
 
       ul{
         @include flex();
         @include flex-align(center,bottom);
         @include xy-cell(12);
         @include xy-grid();
-        margin-top: 15px;
+        margin-top: rem-calc(15);
         list-style: none;
         text-transform: uppercase;
-        color: #FFFFFF;	font-family: Montserrat;	font-size: 14px;	font-weight: 600;	letter-spacing: 1px;	line-height: 18px;
+        color: #FFFFFF;
+        font-family: Montserrat;
+        font-size: rem-calc(14);
+        font-weight: 600;
+        letter-spacing: rem-calc(1);
+        line-height: rem-calc(18);
        
           li{
-            padding-right:5px;
+            padding-right:rem-calc(5);
             @include xy-cell(11%);
             @include breakpoint(small only){
               border-right:none;
               @include xy-cell(12);
+              
             }
           
             border-right: 1px solid #ABABAB;
             @include flex();
             @include flex-align(spaced);
+            
+            
           }
           .stories{
             border-right:none;
@@ -227,32 +237,26 @@
     position: relative;
     img{
       @include breakpoint(medium){
-        	height: 600px;	width: 100%;
-      }  
+        	height: rem-calc(600);	width: 100%;
+      }
+    
     }
     .advert{
-      padding-top: 20px;
-      padding-bottom: 22px;
-      position: absolute;
-      background-color:rgba(255,255,255,0.9);
+      padding-top: rem-calc(20);
+      padding-bottom: rem-calc(22);
       text-align:center;
-      top: 30%;
-      left:35%;
-
+      background-color:rgba(255,255,255,0.9);
+      @include center();
       @include breakpoint(small only){
-      width: 200px;
-      height:80px;
-      padding-top:0;
-      line-height: 5px;
-      padding-top:2px; 
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
+      width: rem-calc(200);
+      height:rem-calc(80);
+      line-height: em-calc(5);
+   
       }
 
       @include breakpoint(medium){
-        padding-left:40px;
-        padding-right:40px;
+        padding-left:rem-calc(40);
+        padding-right:rem-calc(40);
       }
       
       p{
@@ -260,54 +264,56 @@
         color: $secondary-color;
         font-size: rem-calc(14);
         @include breakpoint(small only){
-          font-size: 6px;
-          line-height: 1px;
+          font-size: rem-calc(6);
+          line-height: rem-calc(1);
         }
       }    
     }
     
     h3{
+     
       text-transform: uppercase;
       font-family: Average;
       color:$primary-color;
-      font-size: rem-calc(30px);
-      line-height: 30px;
+      font-size: rem-calc(30);
+      line-height:rem-calc(30);
       @include breakpoint(small only){
-        font-size:12px;
+        font-size:rem-calc(12);
+        @include center();
       }
     }
 
     .treat{
       font-family: Montserrat;
       font-weight: bold;
-      font-size: rem-calc(14px);
+      font-size: rem-calc(14);
       text-transform: uppercase;
       color: #ABABAB;
         @include breakpoint(small only){
-          font-size: rem-calc(6px);
+          font-size: rem-calc(6);
         }
     }
 
-    h4{
-      margin: 0 auto;
-      width: 180px;
-      padding:10px;
-      font-size:15px;
-      text-transform:uppercase;
-      color: white;
-      background: $primary-color;
-      font-weight: bold;
-      border:1px solid $primary-color;
-      border-radius:40px;
-      text-align: center;
-      @include breakpoint(small only){
-        width: 60px;
-        padding:5px;
-        font-size:6px;
-        
+      h4{
+        margin: 0 auto;
+        width: rem-calc(180);
+        padding:rem-calc(10);
+        font-size:rem-calc(15);
+        text-transform:uppercase;
+        color: white;
+        background: $primary-color;
+        font-weight: bold;
+        border:1px solid $primary-color;
+        border-radius:rem-calc(40);
+        text-align: center;
+        @include breakpoint(small only){
+          width: rem-calc(60);
+          padding:rem-calc(5);
+          font-size:rem-calc(6);
+          
+        }
       }
     }
-}//bottom-nav
   
 
    
@@ -316,21 +322,29 @@
 .product-content{
   .heading{
     text-align:center;
-    padding-top: 10px;
-    padding-bottom:20px;
+    padding-top: rem-calc(10);
+    padding-bottom:rem-calc(20);
   }
+
     span{
-      		color: #ABABAB;	font-family:Montserrat;	font-size: 12px;	font-weight: 600;	letter-spacing: 0.5px;		text-align: center; padding-top:20px; padding-bottom:80px;
+          color: #ABABAB;
+          font-family:Montserrat;	
+          font-size: rem-calc(12);	
+          font-weight: 600;	
+          letter-spacing: rem-calc(0.5);		
+          text-align: center; 
+          padding-top:rem-calc(20); 
+          padding-bottom:rem-calc(80);
     }
     h3{
-
       font-family:Average;
       color:$primary-color;
       text-transform: uppercase;
-      font-size: 40px;
+      font-size: rem-calc(40);
     }
 
     .container{
+
         @include flex();
         @include flex-align(center);
         @include xy-grid();
@@ -342,7 +356,7 @@
             @include xy-cell(4.5);
           }
           @include breakpoint(small only){
-            margin-top:20px;
+            margin-top: rem-calc(20);
             @include xy-cell(7);
           }
 
@@ -353,24 +367,29 @@
             }
             
             .price{
-              width:70px;
+              width:rem-calc(70);
               position: absolute;
               right:0;
-              bottom:-7px;
+              bottom: rem-calc(-7);
               h5{
               background-color: $primary-color;
-              color: #FFFFFF;	font-family: Montserrat;	font-size: 12px;	font-weight: 600;	letter-spacing: 0.5px;	line-height: 22px;	text-align: center; padding:2px;
-             }
+              color: #FFFFFF;	font-family: Montserrat;
+              font-size: rem-calc(12);
+              font-weight: 600;	
+              letter-spacing:rem-calc(0.5);	
+              line-height: rem-calc(22);	
+              text-align: center;
+              padding:rem-calc(2);             }
             }
           }
 
           .product-description{
             
             p{
-              height:50px;
-              padding-top:5px;
+              height:rem-calc(50);
+              padding-top:rem-calc(5);
               text-transform: uppercase;
-              font-size: 11.5px;
+              font-size: rem-calc(11.5);
               color:#ABABAB;
               font-weight: bold;
             }
@@ -383,16 +402,16 @@
           }
 
           .product-button{
-            padding-top:20px;
-            width:170px;
+            padding-top:rem-calc(20);
+            width:rem-calc(170);
             h2{
-              padding:5px;
-              font-size:15px;
+              padding:rem-calc(5);
+              font-size:rem-calc(15);
               text-transform:uppercase;
               color: $primary-color;
               font-weight: bold;
               border:1px solid $primary-color;
-              border-radius:40px;
+              border-radius:rem-calc(40);
               text-align: center;
                 &:hover {
                   color: white;
@@ -415,6 +434,7 @@
   margin-top: rem-calc(50);
   .container{
     @include xy-grid();
+
     .gallery-box{
       position: relative;
       background-repeat: no-repeat;
@@ -422,19 +442,20 @@
     }
     .description{
       position: absolute;
-      padding-left:20px;
-      padding-bottom: 8px;
+      padding-left:rem-calc(20);
+      padding-bottom: rem-calc(8);
      
       h2{
         color:white;
         text-transform: uppercase;
         font-family: Average;
-        font-size:33px; line-height: 1.2;
+        font-size:rem-calc(33); line-height: 1.2;
       }
       span{
         font-family: Montserrat;
         font-weight: bold;
-        font-size: 20px;
+        font-size: rem-calc(20);
+
       }
       
     }//global description
@@ -447,35 +468,39 @@
     }
     .t{               
       width:100%;             
-      height: 454px;
+      height: rem-calc(454);
       margin-bottom: rem-calc(20);
     }
     .b{
       width:100%;
-      height: 668px;
+      height: rem-calc(668);
+
     }
     
     .top-left-desc{
       bottom:0;
       right:0;
       text-align:center;
-      padding-right:20px;
+      padding-right:rem-calc(20);
     }
 
         
     .bottom-left-desc{
-        bottom:50%;
         text-align:center;
-        text-align:center;
-        padding-right:20px;
-        width:40%;
-        left:60%;
-        top:30%;
         @include breakpoint(small only){
-          width:50%;
-          @include centerer();
-          
+          @include center();
+
         }
+        
+
+        @include breakpoint(medium){
+              width: 32%;
+              top: 30%;
+              right: 7%;
+        }
+        
+        
+
         h2{
           color:$primary-color;
           }
@@ -485,15 +510,14 @@
           color:$secondary-color;
           font-weight:bold;
           color:#505050;
-         
           }
         
 
         .hampers{
           margin: 0 auto;
           background-color:$primary-color;
-          border-radius: 50px; padding:10px;
-          width:140px;
+          border-radius: rem-calc(50); padding:rem-calc(10);
+          width:rem-calc(140);
           
           span{
             color:white;
@@ -504,16 +528,16 @@
           
         }//hampers-button
         .gift{
-          padding-top:10px;
+          padding-top:rem-calc(10);
           text-align:center;
-          padding-right:10px;
+          padding-right:rem-calc(10);
           
           span{
           text-decoration: underline;
           font-family: Montserrat;
-          font-size: rem-calc(14px);
+          font-size: rem-calc(14);
           color: $secondary-color;
-          padding-left:10px;
+          padding-left: rem-calc(10);
           }
         }
 
@@ -542,13 +566,13 @@
   
       .t{               
         width:100%;             
-        height: 668px;
+        height: rem-calc(668);
         margin-bottom: rem-calc(20);
       }
 
       .b{
         width:100%;
-        height: 454px;
+        height: rem-calc(454);
       }
     }//right section
 
@@ -559,16 +583,11 @@
 
 
 
-  
-    
-
-
-
-
 footer{
     @include xy-grid-container();
   
     .container{
+   
       @include flex();
       @include flex-align(center);
       margin-top:rem-calc(30);
@@ -579,37 +598,49 @@ footer{
             @include xy-cell(2);
           	@include breakpoint(small only) {
               @include xy-cell(12);
-        		    padding-bottom:20px;
+        		    padding-bottom:rem-calc(20);
+            
           	}
           
         
             h3{
               text-align: left;
-              padding-bottom: 5px;
+              padding-bottom: rem-calc(5);
               text-transform: uppercase;
-              color: #262626;	font-family: Average;	font-size: 16px;	letter-spacing: 1.14px;	line-height: 19px;
+              color: #262626;	
+              font-family: Average;	
+              font-size: rem-calc(16);
+              letter-spacing: em-calc(1.14);
+              line-height: rem-calc(19);
             }
             ul{
-           
-          
-          	font-family: Montserrat;	font-size: 12px;	letter-spacing: 0.5px;	line-height: 30px; text-align: left;
-            list-style: none; padding-left:10px; border-left: 1px solid #e6e6e6; 
+            font-family: Montserrat;
+            font-size:rem-calc(12);	
+            letter-spacing: em-calc(0.5);	
+            line-height: rem-calc(30); 
+            text-align: left;
+            list-style: none; 
+            padding-left:rem-calc(10); 
+            border-left: rem-calc(1) solid #e6e6e6; 
               li{
                 color: #505050;
               }
             }
 
             .icon{
-            	height: 11.89px;	width: 11.89px;	border: 0.52px solid #003578;
+              height: rem-calc(11.89);	
+              width: rem-calc(11.89);	
+              border: rem-calc(0.52) solid #003578;
             }
          }//nav-list
         .social-list{
+          padding-top: rem-cal(20);
           @include breakpoint(small only){
-              padding-bottom:20px;
+            padding-bottom:rem-cal(20);
           }
-          padding-top:20px;
+        
           img{
-            padding-right:8px;
+            padding-right:rem-cal(8);
           }
 
         }//social-list
@@ -619,8 +650,8 @@ footer{
 
      }//container
      .bottom-menu{
-       padding-top:12px;
-       padding-bottom:12px;
+      padding-top:rem-cal(12);
+      padding-bottom:rem-cal(12);
       @include flex();
       @include flex-align(justify);
       border-top: 1px solid #e6e6e6;
@@ -632,13 +663,12 @@ footer{
           font-size:  rem-calc(14);
           font-family: Montserrat;
         }
-
       }
 
       .right{
-        padding-top:8px;
+        padding-top:rem-calc(8);
         img{
-          padding-right:5px;
+          padding-right:rem-calc(5);
         }
          text-align:right;
       }

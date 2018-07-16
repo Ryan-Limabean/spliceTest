@@ -2,7 +2,7 @@ import $ from 'jquery';
 import Vue from 'vue';
 import whatInput from 'what-input';
 
-window.$ = $;\
+window.$ = $;
 
 import Foundation from 'foundation-sites';
 // If you want to pick and choose which modules to include, comment out the above and uncomment
@@ -18,5 +18,8 @@ var app = new Vue({
     'el': '#prod',
     components: {
         MenuCart
-    }    
+    }
+   
 })
+
+      
